@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: rancher-server-deployment
+  labels:
+    app: rancher-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rancher-server
+    spec:
+      containers:
+        - image: rancher/rancher
+          resources:
+            limits:
+              memory: "4Gi"
+          name: rancher-server
+          ports:
+          - containerPort: 80
+          - containerPort: 443

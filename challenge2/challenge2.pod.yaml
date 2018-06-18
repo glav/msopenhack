@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: minicraft-server-pod
+  labels:
+    app: minicraft-server
+spec:
+  containers:
+  - name: minicraft-server-container
+    image: openhack/minecraft-server
+    resources:
+      limits:
+        memory: "2Gi"
+    ports:
+      - containerPort: 25565
+    env:
+    - name: EULA
+      value: "TRUE"
+      
