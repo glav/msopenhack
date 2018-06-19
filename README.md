@@ -17,3 +17,11 @@ $kubectl get services -w
 
 Scale
 $az aks scale --name giovani-aks --node-count 3 --resource-group giovani-rg
+
+
+# Links
+https://github.com/kubernetes/helm/blob/master/docs/install.md
+
+https://github.com/Azure/blackbelt-aks-hackfest/blob/master/labs/day1-labs/06-monitoring-k8s.md
+
+https://pascalnaber.wordpress.com/2018/01/26/persistent-storage-and-volumes-using-kubernetes-on-azure-with-aks-or-azure-container-service/

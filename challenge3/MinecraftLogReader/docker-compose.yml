@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  minecraftlogreader:
+    image: ${DOCKER_REGISTRY}minecraftlogreader
+    build:
+      context: .
+      dockerfile: MinecraftLogReader/Dockerfile

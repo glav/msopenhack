@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: minicraft-server-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: minicraft-server
+    spec:
+      containers:
+      - env:
+        - name: EULA
+          value: "TRUE"                
+        resources:
+          limits:
+            memory: "2Gi"      
+        name: minicraft-server-container
+        image: openhack/minecraft-server:2.0
+        ports:
+          - containerPort: 25565
+          - containerPort: 25575
+        volumeMounts:
+          - name: azurefileshare
+            mountPath: /data   
+      volumes:
+      - name: azurefileshare
+        persistentVolumeClaim:
+          claimName: dynamic-persistence-volume-claim

@@ -6,5 +6,8 @@ spec:
   type: LoadBalancer
   ports:
   - port: 25565
+    name: default
+  - port: 25575
+    name: rcon
   selector:
     app: minicraft-server
